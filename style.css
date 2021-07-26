@@ -68,7 +68,10 @@ html,body{
     border-radius: 3px;
 }
 .DoItem p{
+    display: flex;
     word-break: break-all;
+    font-size: 20px;
+    text-align: center;
 }
 .DoItem button{
     background-color: var(--footer-color);
