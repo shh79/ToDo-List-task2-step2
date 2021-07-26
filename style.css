@@ -46,14 +46,21 @@ html,body{
     padding: 2%;
     border-radius: 3px;
 }
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2%;
+}
 .buttons{
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 2%;
+    gap: 10px;
+    width: 100%;
+    height: 70%;
 }
 .buttons input{
-    height: 30%;
+    height: 45%;
     font-size: 120%;
     padding-left: 5px;
     border: none;
@@ -61,7 +68,7 @@ html,body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .buttons button{
-    height: 7%;
+    height: 10%;
     font-size: 90%;
     background-color: var(--footer-color);
     border: none;
@@ -74,5 +81,5 @@ html,body{
 .hint{
     display: flex;
     font-size: 15px;
-    flex-direction: end;
+    align-content: flex-end;
 }
