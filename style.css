@@ -53,7 +53,7 @@ html,body{
     grid-template-columns: 1fr;
     overflow-y: auto;
     grid-template-rows: repeat(auto-fill,70px);
-    gap: 5px;
+    gap: 8px;
     background-color: var(--hover-background-color);
     padding: 2%;
     border-radius: 3px;
@@ -65,6 +65,7 @@ html,body{
     gap: 2px;
     background-color: var(--lighter-background-color);
     padding: 2%;
+    border-radius: 3px;
 }
 .DoItem p{
     word-break: break-all;
