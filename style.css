@@ -147,3 +147,45 @@ button.active{
     display: flex;
     background-color: gray;
 }
+#EditTitle{
+    margin-top: 10%;
+    height: 20%;
+}
+.EditBTNs{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    height: 10%;
+}
+.EditBTNs button{
+    background-color: var(--footer-color);
+    border: none;
+    border-radius: 3px;
+    font-family: var(--commen-font);
+    padding: 0px 10px 0px 10px;
+    font-size: 80%;
+    height: 100%;
+    width: 45%;
+    font-weight: bold;
+    text-align: center;
+}
+.EditBTNs button img{
+    width: 20%;
+    height: 75%;
+    padding-top: 2px;
+    justify-content: center;
+    align-content: center;
+}
+.IDKeeper{
+    display: none;
+}
+#NoBTN{
+    background-color: red;
+}
+#NoBTN:hover{
+    background-color: var(--hover-footer-color);
+}
+#YesBTN[disabled="true"], #NoBTN[disabled="true"]{
+    background-color: var(--lighter-background-color);
+}
