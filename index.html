@@ -13,18 +13,18 @@
         <div class="WorkSpace">
             <div class="DoList">
                 
-                <div class="DoItem">
-                    <p>Item 1</p>
+                <div class="DoItem Completed">
+                    <p>Item 1 Completed</p>
                     <button onclick="this.parentNode.remove();">Done</button>
                 </div>
-                <div class="DoItem">
-                    <p>Item 2</p>
+                <div class="DoItem Active">
+                    <p>Item 2 Active</p>
                     <button onclick="this.parentNode.remove();">Done</button>
-                </div><div class="DoItem">
-                    <p>Item 3</p>
+                </div><div class="DoItem Completed">
+                    <p>Item 3 Completed</p>
                     <button onclick="this.parentNode.remove();">Done</button>
-                </div><div class="DoItem">
-                    <p>End Item</p>
+                </div><div class="DoItem Active">
+                    <p>End Item Active</p>
                     <button onclick="this.parentNode.remove();">Done</button>
                 </div>
                
@@ -34,10 +34,10 @@
                     <input id="DoTitle" type="text" onfocus="this.value=''" placeholder="Type Do title here...">
                     <button onclick="SubmitDo();"><strong>Submit</strong></button>
                 </div>
-                <div class="hint">
-                    <p>
-                        <strong>hint: Write the title of Do then click on the Submit button .</strong>
-                    </p>
+                <div class="filters">
+                    <button onclick="Filter(this);">Active</button>
+                    <button onclick="Filter(this);">Completed</button>
+                    <button class="active" onclick="Filter(this);">All</button>
                 </div>
             </div>
         </div>

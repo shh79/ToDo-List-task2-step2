@@ -3,19 +3,21 @@
     margin: 0px;
     padding: 0px;
 }
-html,body{
-    height: 100vh;
-    min-width: 600px;
-    min-height: 300px;
-    color: #030e12;
-}
 :root{
     --background-color: #fcde67;
     --lighter-background-color: #ffeb9d;
     --hover-background-color: #c0a22a;
     --footer-color: #5bccf6;
     --hover-footer-color: #1cbdf8;
+    --active-footer-color: #1587b1;
+    --main-color: #030e12;
     --commen-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html,body{
+    height: 100vh;
+    min-width: 600px;
+    min-height: 300px;
+    color: var(--main-color);
 }
 .main{
     display: grid;
@@ -115,8 +117,33 @@ html,body{
 .buttons button:hover{
     background-color: var(--hover-footer-color);
 }
-.hint{
+.filters{
     display: flex;
-    font-size: 15px;
     align-content: flex-end;
+    flex-direction: row;
+    gap: 3px;
+    height: 6%;
+    justify-content: space-between;
+}
+.filters button{
+    background-color: var(--footer-color);
+    border: none;
+    border-radius: 3px;
+    font-family: var(--commen-font);
+    padding: 0px 10px 0px 10px;
+    font-size: 80%;
+    width: 32%;
+    font-weight: bold;
+    text-align: center;
+}
+.filters button:hover{
+    background-color: var(--hover-footer-color);
+}
+button.active{
+    background-color: var(--active-footer-color);
+    color: white;
+}
+.Completed{
+    display: flex;
+    background-color: gray;
 }
