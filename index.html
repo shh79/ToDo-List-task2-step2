@@ -13,23 +13,39 @@
         <div class="WorkSpace">
             <div class="DoList">
                 
-                <div class="DoItem Completed" onclick="SendDetailToEdit(this);">
+                <div class="DoItem Completed">
                     <p>Item 1 Completed</p>
-                    <button onclick="this.parentNode.remove();">Done</button>
+                    <div class="ButtonOfItems">
+                        <button class="RemoveBTN" onclick="this.parentNode.parentNode.remove();">Remove</button>
+                        <button onclick="SendDetailToEdit(this.parentNode.parentNode);">Edit</button>
+                        <button onclick="Done(this);">ReDo</button>
+                    </div>
                     <div class="IDKeeper">1001</div>
                 </div>
-                <div class="DoItem Active" onclick="SendDetailToEdit(this);">
+                <div class="DoItem Active">
                     <p>Item 2 Active</p>
-                    <button onclick="this.parentNode.remove();">Done</button>
+                    <div class="ButtonOfItems">
+                        <button class="RemoveBTN" onclick="this.parentNode.parentNode.remove();">Remove</button>
+                        <button onclick="SendDetailToEdit(this.parentNode.parentNode);">Edit</button>
+                        <button onclick="Done(this);">Done</button>
+                    </div>
                     <div class="IDKeeper">1002</div>
                 </div>
-                <div class="DoItem Completed" onclick="SendDetailToEdit(this);">
+                <div class="DoItem Completed">
                     <p>Item 3 Completed</p>
-                    <button onclick="this.parentNode.remove();">Done</button>
+                    <div class="ButtonOfItems">
+                        <button class="RemoveBTN" onclick="this.parentNode.parentNode.remove();">Remove</button>
+                        <button onclick="SendDetailToEdit(this.parentNode.parentNode);">Edit</button>
+                        <button onclick="Done(this);">ReDo</button>
+                    </div>
                     <div class="IDKeeper">1003</div>
-                </div><div class="DoItem Active" onclick="SendDetailToEdit(this);">
+                </div><div class="DoItem Active">
                     <p>End Item Active</p>
-                    <button onclick="this.parentNode.remove();">Done</button>
+                    <div class="ButtonOfItems">
+                        <button class="RemoveBTN" onclick="this.parentNode.parentNode.remove();">Remove</button>
+                        <button onclick="SendDetailToEdit(this.parentNode.parentNode);">Edit</button>
+                        <button onclick="Done(this);">Done</button>
+                    </div>
                     <div class="IDKeeper">1004</div>
                 </div>
                

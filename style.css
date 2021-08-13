@@ -12,10 +12,12 @@
     --active-footer-color: #1587b1;
     --main-color: #030e12;
     --commen-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --Neg-color: rgb(243, 83, 83);
+    --hover-Neg-color: rgb(235, 59, 59);
 }
 html,body{
     height: 100vh;
-    min-width: 600px;
+    min-width: 965px;
     min-height: 300px;
     color: var(--main-color);
 }
@@ -181,11 +183,30 @@ button.active{
     display: none;
 }
 #NoBTN{
-    background-color: red;
+    background-color: var(--Neg-color);
 }
 #NoBTN:hover{
-    background-color: var(--hover-footer-color);
+    background-color: var(--hover-Neg-color);
 }
 #YesBTN[disabled="true"], #NoBTN[disabled="true"]{
     background-color: var(--lighter-background-color);
+}
+.ButtonOfItems{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    width: 40%;
+}
+.ButtonOfItems button{
+    width: 31%;
+    justify-content: center;
+    font-size: 100%;
+}
+button.RemoveBTN{
+    width: 36%;
+    padding: 0px 0px 0px 0px;
+    background-color: var(--Neg-color);
+}
+button.RemoveBTN:hover{
+    background-color: var(--hover-Neg-color);
 }

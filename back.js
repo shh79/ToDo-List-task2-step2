@@ -31,36 +31,30 @@ function UpdateList(){
     }
 }
 function SubmitDo(){
-    var str=document.getElementById("DoTitle").value;
+    let str=document.getElementById("DoTitle").value;
     if(str=="" || str==undefined){
         alert("Please fill the blank !!!");
         return ;
     }
 
-    var listOfDo=document.getElementsByClassName("DoList")[0];
-    var item=document.createElement("div");
-    item.className="DoItem";
-    item.classList.add("Active");
-    item.setAttribute("onclick","SendDetailToEdit(this);");
+    let listOfDo=document.querySelector(".DoList");
 
-    var p=document.createElement("p");
-    var temp=document.createTextNode(str);
-    p.appendChild(temp);
+    let newItem=`
+    <div class="DoItem Active">
+        <p>${str}</p>
+        <div class="ButtonOfItems">
+            <button class="RemoveBTN" onclick="this.parentNode.parentNode.remove();">Remove</button>
+            <button onclick="SendDetailToEdit(this.parentNode.parentNode);">Edit</button>
+            <button onclick="Done(this);">Done</button>
+        </div>
+        <div class="IDKeeper">${ID}</div>
+    </div>
+    `;
 
-    var button=document.createElement("button");
-    button.textContent="Done";
-    button.setAttribute("onclick","this.parentNode.remove();");
-
-    item.appendChild(p);
-    item.appendChild(button);
-
-    item.innerHTML+=`<div class="IDKeeper">${ID}</div>`;
-
-    listOfDo.prepend(item);
-
-    ++ID;
+    listOfDo.innerHTML=newItem+listOfDo.innerHTML;
 
     document.getElementById("DoTitle").value="";
+    ++ID;
 
     UpdateList();
 }
@@ -89,7 +83,6 @@ function EditDo(anwser=false){
     if(anwser){
         let items=document.querySelectorAll(".IDKeeper");
         items.forEach(item => {
-            console.log(item.parentNode);
             if(item.innerText==ID){
                 item.parentNode.querySelector("p").innerText=newText.value;
             }
@@ -111,7 +104,7 @@ function EditDo(anwser=false){
 function SendDetailToEdit(element){
     let textBox=document.getElementById("EditTitle");
     textBox.value = element.querySelector("p").innerText;
-    document.getElementById("editID").innerText = element.querySelector("div").innerText;
+    document.getElementById("editID").innerText = element.querySelector(".IDKeeper").innerText;
     document.getElementById("YesBTN").setAttribute("disabled","false");
     document.getElementById("NoBTN").setAttribute("disabled","false");
     document.getElementById("YesBTN").disabled=false;
@@ -123,4 +116,25 @@ function SendDetailToEdit(element){
         // item.setAttribute("disabled","true");
         item.disabled=true;
     });
+}
+function Done(element){
+    let item=element.parentNode.parentNode;
+    if(element.textContent=="Done"){
+        element.textContent="ReDo";
+        element.classList.add("active");
+        
+        item.classList.remove("Active");
+        item.classList.add("Completed");
+
+        return;
+    }
+    if(element.textContent=="ReDo"){
+        element.textContent="Done";
+        element.classList.remove("active");
+
+        item.classList.remove("Completed");
+        item.classList.add("Active");
+
+        return;
+    }
 }
