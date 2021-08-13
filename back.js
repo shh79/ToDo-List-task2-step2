@@ -125,16 +125,13 @@ function Done(element){
         
         item.classList.remove("Active");
         item.classList.add("Completed");
-
-        return;
     }
-    if(element.textContent=="ReDo"){
+    else if(element.textContent=="ReDo"){
         element.textContent="Done";
         element.classList.remove("active");
 
         item.classList.remove("Completed");
         item.classList.add("Active");
-
-        return;
     }
+    UpdateList();
 }

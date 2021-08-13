@@ -147,7 +147,10 @@ button.active{
 }
 .Completed{
     display: flex;
-    background-color: gray;
+    background-color: var(--hover-footer-color);
+}
+.Completed button:hover{
+    background-color: var(--footer-color);
 }
 #EditTitle{
     margin-top: 10%;
